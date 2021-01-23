@@ -1,0 +1,56 @@
+{
+  "name": "REPLACE_ME",
+  "version": "1.0.0",
+  "description": "Starter project to build an SVG icon library",
+  "main": "index.js",
+  "scripts": {
+    "build": "svg-to-ts && npm run copy-assets",
+    "build:ts": "browserify showcase/main.ts -p [ tsify --noImplicitAny ] > showcase/main.js",
+    "copy-assets": "cpx package.json dist && cpx README.md dist",
+    "commit": "git-cz",
+    "serve": "npm-run-all -p build watch-showcase serve-html",
+    "serve-html": "http-server ./showcase -o",
+    "watch-showcase": "tsc showcase/main.ts --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kreuzerk/svg-icon-library-starter.git"
+  },
+  "keywords": [
+    "SVG",
+    "icons",
+    "library",
+    "starter"
+  ],
+  "author": "Kevin Kreuzer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kreuzerk/svg-icon-library-starter/issues"
+  },
+  "homepage": "https://github.com/kreuzerk/svg-icon-library-starter#readme",
+  "devDependencies": {
+    "browserify": "^16.5.2",
+    "cpx": "^1.5.0",
+    "git-cz": "^4.7.1",
+    "npm-run-all": "^4.1.5",
+    "svg-to-ts": "^6.0.0",
+    "tsify": "^5.0.2",
+    "typescript": "^4.0.3",
+    "typescript-bundle": "^1.0.16"
+  },
+  "svg-to-ts": {
+    "conversionType": "files",
+    "srcFiles": [
+      "./svg-icons/**/*.svg"
+    ],
+    "outputDirectory": "./dist",
+    "interfaceName": "REPLACE_ME",
+    "typeName": "REPLACE_ME",
+    "prefix": "REPLACE_ME",
+    "generateType": true,
+    "exportCompleteIconSet": true,
+    "optimizeForLazyLoading": true,
+    "modelFileName": "REPLACE_ME.model",
+    "compileSources": true
+  }
+}
