@@ -36,7 +36,6 @@ This is a startert project that helps you build your own awesome icon library fo
 Once you placed the icons inside the `svg-icons` folder you can deliver them to production. `npm run build` converts all the icons to *JavaScript* and generates the correct *TypeScript* declaration files into a `dist` folder.
 
 
-
 ## Consuming your icon library
 
 Once published to *npm*, your icon library is ready to be consumed. There are various ways to consume the icon library.
