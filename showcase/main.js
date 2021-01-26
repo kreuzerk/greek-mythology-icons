@@ -1,8 +1,6 @@
-import {completeIconSet, MyIcon} from '../dist';
+import {completeIconSet} from '../dist/icons';
 
-console.log('Complete set', completeIconSet);
-
-function buildIconCard(icon: MyIcon): HTMLDivElement {
+function buildIconCard(icon) {
     const iconCard = document.createElement('div');
     iconCard.classList.add('icon-card');
     iconCard.appendChild(buildSVGElement(icon));
@@ -10,7 +8,7 @@ function buildIconCard(icon: MyIcon): HTMLDivElement {
     return iconCard;
 }
 
-function buildSVGElement(icon: MyIcon): SVGElement {
+function buildSVGElement(icon) {
     const div = document.createElement('DIV');
     div.innerHTML = icon.data;
     return (
@@ -20,15 +18,15 @@ function buildSVGElement(icon: MyIcon): SVGElement {
 
 }
 
-function buildIconList(iconSet: MyIcon[]) {
+function buildIconList(iconSet) {
     const iconList = document.querySelector('.icon-list');
     iconList.innerHTML = '';
-    iconSet.forEach((icon: MyIcon) => iconList.appendChild(buildIconCard(icon)));
+    iconSet.forEach(icon => iconList.appendChild(buildIconCard(icon)));
 }
 
 const searchField = document.querySelector('input');
-searchField.addEventListener('keydown', function (event: KeyboardEvent) {
-    const newIconSet = completeIconSet.filter((icon: MyIcon) => (icon.name as string).includes(searchField.value));
+searchField.addEventListener('keydown', function (event) {
+    const newIconSet = completeIconSet.filter(icon => icon.name.includes(searchField.value));
     buildIconList(newIconSet);
 });
 
