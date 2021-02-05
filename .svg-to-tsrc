@@ -4,12 +4,12 @@
       "./svg-icons/**/*.svg"
     ],
     "outputDirectory": "./dist/icons",
-    "interfaceName": "REPLACE_ME",
-    "typeName": "REPLACE_ME",
-    "prefix": "REPLACE_ME",
+    "interfaceName": "GmIcons",
+    "typeName": "gmIcons",
+    "prefix": "gmIcons",
     "generateType": true,
     "exportCompleteIconSet": true,
     "optimizeForLazyLoading": true,
-    "modelFileName": "REPLACE_ME.model",
+    "modelFileName": "gm-icons.model",
     "compileSources": true
 }
